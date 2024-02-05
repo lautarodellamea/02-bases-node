@@ -102,7 +102,7 @@ getPokemonById(4)
 /* -------------------------------------------------------- */
 
 // 08-patron-adaptador-fetch.js
-const { getPokemonById } = require("./js-fundation/08-patron-adaptador-fetch.js");
+/* const { getPokemonById } = require("./js-fundation/08-patron-adaptador-fetch.js");
 
 getPokemonById(4)
   .then((pokemon) => {
@@ -111,4 +111,14 @@ getPokemonById(4)
   .catch((error) => {
     console.error(error.message);
   })
-  .finally(() => console.log("finally"));
+  .finally(() => console.log("Finalmente")); */
+/* -------------------------------------------------------- */
+
+// usando nuestro logger 
+const { buildLogger } = require("./plugins");
+
+// le paso como argumento el archivo o servicio que estoy mandando a llamar
+// esto me crea archivos .log, donde yo los podrias tratar de diferentes formas, hacer una serializacion a json por ejemplo
+const logger = buildLogger("app.js");
+logger.log("Hola Mundo");
+logger.error("Esto es algo malo");
